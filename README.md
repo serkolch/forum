@@ -26,3 +26,9 @@ A signed-in user can sign out
 
 ## Entity Relationship Diagram
 <img src="public/img/erd.png" alt="This is where an ERD should be!" width="500px"/>
+
+## Wireframes
+<img src="public/img/landing.png" alt="This is where a wireframe should be!" width="500px"/>
+<img src="public/img/topic.png" alt="This is where a wireframe should be!" width="500px"/>
+<img src="public/img/login.png" alt="This is where a wireframe should be!" width="500px"/>
+<img src="public/img/signup.png" alt="This is where a wireframe should be!" width="500px"/>

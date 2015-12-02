@@ -1,6 +1,8 @@
 DROP TABLE IF EXISTS topics;
 DROP TABLE IF EXISTS comments;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS forums;
+DROP TABLE IF EXISTS forums_topics;
 
 CREATE TABLE users (
   id INTEGER PRIMARY KEY,
@@ -12,11 +14,15 @@ CREATE TABLE users (
   created_at DATETIME
 );
 
+CREATE TABLE forums (
+  id INTEGER PRIMARY KEY,
+  sport VARCHAR(255)
+);
+
 CREATE TABLE topics (
   id INTEGER PRIMARY KEY,
-  topic_type VARCHAR(255),
   topic_name TEXT,
-  posted_by VARCHAR(255) REFERENCES users(id),
+  user_id VARCHAR(255) REFERENCES users(id),
   posted_at DATETIME,
   content TEXT,
   likes INTEGER
@@ -24,8 +30,13 @@ CREATE TABLE topics (
 
 CREATE TABLE comments (
   id INTEGER PRIMARY KEY,
-  comment_parent INTEGER REFERENCES topics(id),
-  posted_by VARCHAR(255) REFERENCES users(id),
+  topic_id INTEGER REFERENCES topics(id),
+  user_id VARCHAR(255) REFERENCES users(id),
   posted_at DATETIME,
   content TEXT
+);
+
+CREATE TABLE forums_topics (
+  forum_id INTEGER REFERENCES forums(id),
+  topic_id INTEGER REFERENCES topics(id)
 );

@@ -14,12 +14,12 @@ In Progress
 HTML, CSS, Ruby & Sinatra, SQL/ActiveRecord, Javascript/JQuery
 
 ## User Stories
-A user views topics
-A user views a single topic and corresponding comments
-A user filters topics by date or popularity
-A user signs in
-A signed-in user creates a new topic with title, type(which sport/general), and content
-A signed-in user can edit any of their own topic titles, types, contents from the topic page
-A signed-in user can create a new comment on any topic
-A signed-in user can edit their own comment content from the corresponding topic page
-A signed-in user can sign out
+A user views topics  
+A user views a single topic and corresponding comments  
+A user filters topics by date or popularity  
+A user signs in  
+A signed-in user creates a new topic with title, type(which sport/general), and content  
+A signed-in user can edit any of their own topic titles, types, contents from the topic page  
+A signed-in user can create a new comment on any topic  
+A signed-in user can edit their own comment content from the corresponding topic page  
+A signed-in user can sign out  

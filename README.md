@@ -23,3 +23,6 @@ A signed-in user can edit any of their own topic titles, types, contents from th
 A signed-in user can create a new comment on any topic  
 A signed-in user can edit their own comment content from the corresponding topic page  
 A signed-in user can sign out  
+
+## Entity Relationship Diagram
+<img src="erd.png" alt="This is where an ERD should be!" width="500px"/>

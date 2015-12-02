@@ -25,4 +25,4 @@ A signed-in user can edit their own comment content from the corresponding topic
 A signed-in user can sign out  
 
 ## Entity Relationship Diagram
-<img src="erd.png" alt="This is where an ERD should be!" width="500px"/>
+<img src="public/img/erd.png" alt="This is where an ERD should be!" width="500px"/>

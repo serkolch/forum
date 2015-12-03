@@ -1,0 +1,73 @@
+html, body {
+  background-color: #E8E8E8;
+  margin: 0px;
+  border: 0px;
+}
+
+.navigation-bar, .filters, .footer, .topics {
+  background-color: #ADADAD;
+}
+
+.navigation-bar {
+  height: 32px;
+}
+
+.home, .login {
+  position: absolute;
+  top: 7px;
+}
+
+.home, .login, .filter {
+  color: #7D7D7D;
+  text-decoration: none;
+}
+
+.home:hover, .login:hover, .filter:hover {
+  font-weight: bolder;
+  color: #525252;
+}
+
+.login {
+  right: 7px;
+}
+
+.home {
+  left: 7px;
+}
+
+img {
+  width:100%;
+}
+
+.footer {
+/*  position:absolute;
+  bottom:0;*/
+  width:100%;
+  height:32px;
+}
+
+.filters {
+  text-align: center;
+  padding: 5px;
+}
+
+.filter {
+  margin: 0 8%;
+}
+
+.topics {
+  width: 600px;
+  margin: 5px auto;
+
+}
+
+.likes, .date, .topic {
+  display: inline-block;
+  margin: 5px 0 5px 5px;
+}
+
+.likes, .date {
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+}

@@ -84,9 +84,6 @@ module App
       @session_user = User.find(session[:user_id]) if session[:user_id]      
       @topic = Topic.find(params["id"])
       @comments = Comment.where(topic_id: params["id"])
-      puts @topic
-      puts @comments
-      puts @session_user
       erb :show_topic
     end
     

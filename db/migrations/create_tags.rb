@@ -12,4 +12,4 @@ class CreateTags < ActiveRecord::Migration
   end
 end
 
-CreateTags.migrate(:down)
+# CreateTags.migrate(:down)

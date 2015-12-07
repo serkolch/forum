@@ -15,4 +15,4 @@ class CreateComments < ActiveRecord::Migration
   end
 end
 
-CreateComments.migrate(:down)
+# CreateComments.migrate(:down)

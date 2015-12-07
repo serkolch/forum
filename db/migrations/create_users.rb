@@ -18,4 +18,4 @@ class CreateUsers < ActiveRecord::Migration
   end
 end
 
-CreateUsers.migrate(:down)
+# CreateUsers.migrate(:down)

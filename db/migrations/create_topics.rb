@@ -8,7 +8,7 @@ class CreateTopics < ActiveRecord::Migration
       t.datetime(:posted_at)
       t.string(:content)
       t.integer(:likes)
-      t.integer(:comments)
+      t.integer(:comment_count)
     end
   end
 

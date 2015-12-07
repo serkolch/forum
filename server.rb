@@ -66,6 +66,20 @@ module App
       redirect to "/"
     end
 
+    get "/topic/new" do
+      if session[:user_id]
+        @session_user = User.find(session[:user_id]) if session[:user_id]
+        erb :new_topic
+      else
+        redirect to "/login"
+      end
+    end
+
+    post "/topic/new" do
+      Topic.create(name: params["name"], content: params["content"], user_id: session[:user_id], posted_at: DateTime.now, likes: 0)
+      redirect to "/topic/#{Topic.last.id}"
+    end
+
     get "/topic/:id" do
       @session_user = User.find(session[:user_id]) if session[:user_id]      
       @topic = Topic.find(params["id"])
@@ -91,10 +105,6 @@ module App
     delete "/topic/:id" do
       Topic.find(params["id"]).destroy
       redirect to "/"
-    end
-
-    get "/topic/new" do
-      "Hello World"
     end
 
     get "/topic/:id/comment/new" do

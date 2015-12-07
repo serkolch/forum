@@ -4,7 +4,11 @@
   <a class="filter">Most Commented</a>
 </div> <!-- filters -->
 
-<a class="new-topic" href="/topic/new">New Topic</a>
+<% if @session_user %>
+  <a class="new-topic" href="/topic/new">New Topic</a>
+<% else %>
+  <a class="new-topic hidden" href="/topic/new">New Topic</a>
+<% end %>
 
 <% @topics.each do |topic| %>
   <div class="topics"><a class="topic" href="/topic/<%=topic.id%>">

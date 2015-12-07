@@ -18,6 +18,10 @@ h1 {
   height: 32px;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .home, .register {
   position: absolute;
   top: 7px;
@@ -163,6 +167,7 @@ textarea {
   width: 600px;
   height: 50px;
   margin: 10px auto;
+  resize: none;
 }
 
 .edit-text {

@@ -7,7 +7,7 @@
     <% else %>
       <li><a class="option-hover hidden" href="/topic/<%=@topic.id%>/edit">Edit</a></li>     
     <% end %> -->
-    <li><a class="option-hover" href="/profile/<%=User.find(@topic.user_id).id%>"><%= User.find(@topic.user_id).username %></a></li>
+ <!--    <li><a class="option-hover" href="/profile/<%=User.find(@topic.user_id).id%>"><%= User.find(@topic.user_id).username %></a></li> -->
     <li><%= @topic.posted_at %></li>
     <li><%= @topic.likes %> likes</li>
 
@@ -24,7 +24,7 @@
       <% else %>
         <li><a class="option-hover hidden" href="/topic/edit/<%=comment.id%>">Edit</a></li>    
       <% end %>   -->      
-      <li><a class="option-hover" href="/profile/<%=User.find(comment.user_id).id%>"><%= User.find(comment.user_id).username %></a></li>
+<!--       <li><a class="option-hover" href="/profile/<%=User.find(comment.user_id).id%>"><%= User.find(comment.user_id).username %></a></li> -->
       <li><%= comment.posted_at %></li>   
     </ul>
   </div>

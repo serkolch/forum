@@ -6,6 +6,5 @@ require_relative "migrations/create_users.rb"
 
 CreateComments.migrate(ARGV[0])
 CreateTags.migrate(ARGV[0])
-CreateTagsTopics.migrate(ARGV[0])
 CreateTopics.migrate(ARGV[0])
 CreateUsers.migrate(ARGV[0])

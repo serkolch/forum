@@ -11,22 +11,34 @@
 <body>
   <div class="navigation-bar">
     <a class="home"href="/">Home</a>
-    <% if @session_user %>
-      <div class="register">
+    <div class="register">
+      <form class="overall-filters" method="POST" action="/filter">
+        <select class="filter-tag-loc" name="tag">
+          <% Tag.all.each do |tag|%>
+            <option value="<%=tag.sport%>"><%=tag.sport%></option>
+          <% end %>
+        </select>
+        <select class="filter-tag-loc" name="location">
+          <option value="All">All</option>
+          <option value="NYC">NYC</option>
+          <option value="LA">LA</option>
+          <option value="DC">DC</option>
+        </select>
+        <input class="filter-tag-loc" type="submit" value="Filter">
+      </form>
+      <% if @session_user %>
         <a href="/profile/<%= @session_user.id%>" class="profile"><%= @session_user.username%></a>
         <form method="POST" action="/logout">
           <input type="hidden" name="_method" value="delete">
           <input type="submit" class="logout" value="Log Out">
         </form>
-      </div> <!-- register -->
-    <% else %>
-      <div class="register">
+      <% else %>
         <a class="signup" href="/users/new">Sign Up</a>  
         <a class="login" href="/login">Log In</a>
-      </div> <!-- register -->
-    <% end %>
+      <% end %>    
+    </div> <!-- register -->
   </div> <!-- navigation-bar -->
-  <img class="layout" src="/img/header.png">
+  <div class="layout"></div> <!-- image -->
   <%= yield %>
   <!-- <div class="footer">
   </div> -->

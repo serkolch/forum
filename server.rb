@@ -3,22 +3,55 @@ module App
   
     set :method_override, true
     enable :sessions
+
+    tag = "General"
+    location = "All"
   
     get "/" do
       @session_user = User.find(session[:user_id]) if session[:user_id]
-      @topics = Topic.order(posted_at: :desc)
+      if tag=="General"&&location=="All"
+        @topics = Topic.order(posted_at: :desc)
+      elsif tag=="General"
+        @topics = Topic.where(user_id: User.where(location: location)).order(posted_at: :desc)
+      elsif tag=="All"
+        @topics = Topic.where(tag: tag).order(posted_at: :desc)
+      else
+        @topics = Topic.where(user_id: User.where(location: location), tag: tag)
+      end
       erb :index
+    end
+
+    post "/filter" do
+      tag = params["tag"]
+      location = params["location"]
+      redirect to "/"
     end
 
     get "/most_likes" do
       @session_user = User.find(session[:user_id]) if session[:user_id]
-      @topics = Topic.order(likes: :desc)      
+      if tag=="General"&&location=="All"
+        @topics = Topic.order(likes: :desc)
+      elsif tag=="General"
+        @topics = Topic.where(user_id: User.where(location: location)).order(likes: :desc)
+      elsif tag=="All"
+        @topics = Topic.where(tag: tag).order(likes: :desc)
+      else
+        @topics = Topic.where(user_id: User.where(location: location), tag: tag).order(likes: :desc)
+      end     
       erb :index
     end
 
     get "/most_comments" do
       @session_user = User.find(session[:user_id]) if session[:user_id]
-      @topics = Topic.order(comment_count: :desc)      
+      if tag=="General"&&location=="All"
+        @topics = Topic.order(comment_count: :desc)
+      elsif tag=="General"
+        @topics = Topic.where(user_id: User.where(location: location)).order(comment_count: :desc)
+      elsif tag=="All"
+        @topics = Topic.where(tag: tag).order(comment_count: :desc)
+      else
+        @topics = Topic.where(user_id: User.where(location: location), tag: tag).order(comment_count: :desc)
+      end     
       erb :index
     end
 
@@ -31,6 +64,7 @@ module App
       if user
         session[:user_id] = user.id
         redirect to "/"
+        binding.pry
       else
         redirect to "/login"
       end

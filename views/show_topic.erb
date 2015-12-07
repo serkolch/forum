@@ -17,9 +17,9 @@
 <form method="POST" action="/topic/<%=@topic.id%>/comment">
   <textarea type="text" name="content" placeholder="Type comments here!"></textarea>
   <% if session[:user_id] %>
-    <input class="new-comment" type="submit" value="New Comment">
+    <input class="new-comment-loggedin" type="submit" value="New Comment">
   <% else %>
-    <a class="new-comment" href="/login">Sign in to leave comments</a>
+    <a class="new-comment-loggedout" href="/login">Sign in to leave comments</a>
   <% end %>
 </form>
 

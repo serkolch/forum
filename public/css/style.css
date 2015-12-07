@@ -1,5 +1,7 @@
 html, body {
-  background-color: #E8E8E8;
+  background-image: url("../img/basketball.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
   margin: 0px;
   border: 0px;
   font-family: helvetica;
@@ -10,8 +12,8 @@ h1 {
   margin: 10px;
 }
 
-.navigation-bar, .filters, .footer, .topics, .show-topic {
-  background-color: #ADADAD;
+.navigation-bar, .filters, .footer, .topics, .show-topic, .new-topic, .new-comment-loggedin, .new-comment-loggedout {
+  background-color: rgba(173,173,173,0.7);
 }
 
 .navigation-bar {
@@ -27,21 +29,34 @@ h1 {
   top: 7px;
 }
 
-.logout {
+.logout, .filter-tag-loc {
   position: absolute;
   top: -4px;
-  right: 0;
   background: none;
   border: none;
   font-size: 16px;
 }
 
-.home, .signup, .login, .filter, .profile, .logout, .edit, .new-topic, .new-comment, .option-hover {
+.filter-tag-loc:nth-child(1) {
+  right: 290px;
+  top: -3px;
+}
+
+.filter-tag-loc:nth-child(2) {
+  right: 230px;
+  top: -3px;
+}
+
+.filter-tag-loc:nth-child(3) {
+  right: 180px;
+}
+
+.home, .signup, .login, .filter, .profile, .logout, .edit, .new-topic, .new-comment-loggedin, .new-comment-loggedout, .option-hover, .filter-tag-loc {
   color: #7D7D7D;
   text-decoration: none;
 }
 
-.home:hover, .signup:hover, .login:hover, .filter:hover, .profile:hover, .logout:hover, .edit:hover, .new-topic:hover, .new-comment:hover, .option-hover:hover {
+.home:hover, .signup:hover, .login:hover, .filter:hover, .profile:hover, .logout:hover, .edit:hover, .new-topic:hover, .new-comment-loggedin:hover, .new-comment-loggedout:hover, .option-hover:hover, .filter-tag-loc:hover {
   font-weight: bolder;
   color: #525252;
 }
@@ -61,11 +76,18 @@ h1 {
 
 .login , .logout {
   margin-left: 15px;
+  right: 0;
+}
+
+.overall-filters {
+  right: 200px;
+  display: inline-block;
 }
 
 .new-topic {
   text-align: right;
   margin: 5px 5px 5px 84%;
+  padding: 1px 3px 1px 3px;
 }
 
 .loggedin {
@@ -75,7 +97,8 @@ h1 {
 .layout {
   width:100%;
   height: 125px;
-  margin-bottom: -3px;
+  margin-bottom: 0px;
+  background-image: url("../img/header.png")
 }
 
 .footer {
@@ -97,7 +120,7 @@ h1 {
 
 .topics {
   width: 94%;
-  margin: 5px auto;
+  margin: 6px auto;
 }
 
 .topics:hover {
@@ -136,7 +159,7 @@ h1 {
 
 .signup-input, .edit-input {
   display: block;
-  margin: 5px 0 20px 200px;
+  margin: 5px 0 20px 42%;
 }
 
 .avatar {
@@ -183,9 +206,22 @@ textarea {
   height: 40px;
 }
 
-.new-comment {
+.new-comment-loggedin, .new-comment-loggedout {
   font-size: 16px;
   border: none;
-  background: none;
+  padding: 1px 4px;
+}
+
+.new-comment-loggedin {
   margin-left: 88%;
+}
+
+.new-comment-loggedout {
+  margin-left: 82%;
+}
+
+.filter-tag-loc {
+  font-size: 16px;
+  border:none;
+  background:none;
 }

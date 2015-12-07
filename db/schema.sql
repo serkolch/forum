@@ -2,7 +2,6 @@ DROP TABLE IF EXISTS topics;
 DROP TABLE IF EXISTS comments;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS tags;
-DROP TABLE IF EXISTS tags_topics;
 
 CREATE TABLE users (
   id INTEGER PRIMARY KEY,
@@ -27,7 +26,8 @@ CREATE TABLE topics (
   posted_at DATETIME,
   content TEXT,
   likes INTEGER,
-  comment_count INTEGER
+  comment_count INTEGER,
+  tag VARCHAR
 );
 
 CREATE TABLE comments (
@@ -36,9 +36,4 @@ CREATE TABLE comments (
   user_id INTEGER REFERENCES users(id),
   posted_at DATETIME,
   content TEXT
-);
-
-CREATE TABLE tags_topics (
-  tag_id INTEGER REFERENCES tags(id),
-  topic_id INTEGER REFERENCES topics(id)
 );

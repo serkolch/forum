@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer(:age)
       t.string(:gender)
       t.string(:location)
-      t.string(:avatar_img_url)
+      t.string(:avatar)
       t.datetime(:created_at)
     end
   end
@@ -18,4 +18,4 @@ class CreateUsers < ActiveRecord::Migration
   end
 end
 
-# CreateUsers.migrate(:down)
+CreateUsers.migrate(:down)

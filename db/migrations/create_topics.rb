@@ -16,4 +16,4 @@ class CreateTopics < ActiveRecord::Migration
   end
 end
 
-# CreateTopics.migrate(:down)
+CreateTopics.migrate(:down)

@@ -13,4 +13,4 @@ class CreateTagsTopics < ActiveRecord::Migration
   end
 end
 
-# CreateTagsTopics.migrate(:down)
+CreateTagsTopics.migrate(:down)

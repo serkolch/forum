@@ -25,12 +25,12 @@ tags = [
 Tag.create(tags)
 
 topics = [
-{name: "Hey let's play", user_id: 1, posted_at: DateTime.new(2015,12,01,3,16), content: "Nunc in lorem nec ipsum fringilla fermentum. Sed feugiat ligula sed nulla consequat dictum. Ut eros mauris, vehicula eu consectetur", likes: 11, comments: 1},
-{name: "Hey let's play again", user_id: 1, posted_at: DateTime.new(2015,12,02,5,42), content: "Morbi et magna vitae massa aliquet blandit. Donec non odio ligula. Phasellus pulvinar dolor eu nisi sodales laoreet. Integer eu.", likes: 17, comments: 2},
-{name: "Still hey let's play", user_id: 2, posted_at: DateTime.new(2015,12,05,8,19), content: "Integer vel viverra diam. Donec finibus, metus nec malesuada sodales, est nunc ultrices mauris, nec fermentum nisl neque ac augue.", likes: 8, comments: 1},
-{name: "Hey... let's play...", user_id: 1, posted_at: DateTime.new(2015,12,02,5,16), content: "Sed eleifend quam eu luctus scelerisque. Vivamus tempor arcu ut egestas rhoncus. Cum sociis natoque penatibus et magnis dis parturient.", likes: 21, comments: 1},
-{name: "Hey let's play tennis", user_id: 1, posted_at: DateTime.new(2015,12,04,7,34), content: "Quisque eu justo ut libero fermentum condimentum volutpat in velit. Pellentesque in vestibulum velit. Vivamus vitae suscipit mauris. Aenean eget.", likes: 1, comments: 1},
-{name: "Hey let's play basketball", user_id: 1, posted_at: DateTime.new(2015,12,01,5,11), content: "Phasellus sapien dolor, molestie nec ante ut, scelerisque hendrerit mauris. Mauris sit amet augue a nisl fermentum euismod sed vel.", likes: 13, comments: 0}
+{name: "Hey let's play", user_id: 1, posted_at: DateTime.new(2015,12,01,3,16), content: "Nunc in lorem nec ipsum fringilla fermentum. Sed feugiat ligula sed nulla consequat dictum. Ut eros mauris, vehicula eu consectetur", likes: 11, comment_count: 1},
+{name: "Hey let's play again", user_id: 1, posted_at: DateTime.new(2015,12,02,5,42), content: "Morbi et magna vitae massa aliquet blandit. Donec non odio ligula. Phasellus pulvinar dolor eu nisi sodales laoreet. Integer eu.", likes: 17, comment_count: 2},
+{name: "Still hey let's play", user_id: 2, posted_at: DateTime.new(2015,12,05,8,19), content: "Integer vel viverra diam. Donec finibus, metus nec malesuada sodales, est nunc ultrices mauris, nec fermentum nisl neque ac augue.", likes: 8, comment_count: 1},
+{name: "Hey... let's play...", user_id: 1, posted_at: DateTime.new(2015,12,02,5,16), content: "Sed eleifend quam eu luctus scelerisque. Vivamus tempor arcu ut egestas rhoncus. Cum sociis natoque penatibus et magnis dis parturient.", likes: 21, comment_count: 1},
+{name: "Hey let's play tennis", user_id: 1, posted_at: DateTime.new(2015,12,04,7,34), content: "Quisque eu justo ut libero fermentum condimentum volutpat in velit. Pellentesque in vestibulum velit. Vivamus vitae suscipit mauris. Aenean eget.", likes: 1, comment_count: 1},
+{name: "Hey let's play basketball", user_id: 1, posted_at: DateTime.new(2015,12,01,5,11), content: "Phasellus sapien dolor, molestie nec ante ut, scelerisque hendrerit mauris. Mauris sit amet augue a nisl fermentum euismod sed vel.", likes: 13, comment_count: 0}
 ]
 
 Topic.create(topics)

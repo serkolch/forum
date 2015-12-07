@@ -27,7 +27,7 @@ CREATE TABLE topics (
   posted_at DATETIME,
   content TEXT,
   likes INTEGER,
-  comments INTEGER
+  comment_count INTEGER
 );
 
 CREATE TABLE comments (

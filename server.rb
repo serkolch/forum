@@ -18,7 +18,7 @@ module App
 
     get "/most_comments" do
       @session_user = User.find(session[:user_id]) if session[:user_id]
-      @topics = Topic.order(comments: :desc)      
+      @topics = Topic.order(comment_count: :desc)      
       erb :index
     end
 
@@ -121,7 +121,7 @@ module App
 
     post "/topic/:id/comment" do
       Comment.create(content: params["content"], topic_id: params["id"], user_id: session[:user_id], posted_at: DateTime.now)
-      Topic.find(params["id"]).comments += 1
+      Topic.find(params["id"]).update(comment_count: Topic.find(params["id"]).comment_count+1)
       redirect to "/topic/#{Comment.last.topic_id}"
     end
 
@@ -139,7 +139,7 @@ module App
     delete "/comment/:id" do
       topic_id = Comment.find(params["id"]).topic_id
       Comment.find(params["id"]).destroy
-      Topic.find(topic_id).comments -= 1
+      Topic.find(params["id"]).update(comment_count: Topic.find(params["id"]).comment_count-1)
       redirect to "/topic/#{topic_id}"
     end
 

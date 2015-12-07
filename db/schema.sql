@@ -26,7 +26,8 @@ CREATE TABLE topics (
   user_id INTEGER REFERENCES users(id),
   posted_at DATETIME,
   content TEXT,
-  likes INTEGER
+  likes INTEGER,
+  comments INTEGER
 );
 
 CREATE TABLE comments (

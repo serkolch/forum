@@ -1,13 +1,13 @@
 <div class="filters">
-  <a class="filter">New</a>
-  <a class="filter">Liked</a>
-  <a class="filter">Most Commented</a>
+  <a href="/" class="filter">New</a>
+  <a href="/most_likes" class="filter">Liked</a>
+  <a href="/most_comments" class="filter">Most Commented</a>
 </div> <!-- filters -->
 
 <% if @session_user %>
-  <a class="new-topic" href="/topic/new">New Topic</a>
+  <a class="new-topic loggedin" href="/topic/new">New Topic</a>
 <% else %>
-  <a class="new-topic hidden" href="/topic/new">New Topic</a>
+  <a class="new-topic" href="/login">Sign in to create topics</a>
 <% end %>
 
 <% @topics.each do |topic| %>

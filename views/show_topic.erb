@@ -13,17 +13,25 @@
 
   </ul>
 </div>
-<textarea type="text" name="comment"></textarea>
+
+<form method="POST" action="/topic/<%=@topic.id%>/comment">
+  <textarea type="text" name="content" placeholder="Type comments here!"></textarea>
+  <% if session[:user_id] %>
+    <input class="new-comment" type="submit" value="New Comment">
+  <% else %>
+    <a class="new-comment" href="/login">Sign in to leave comments</a>
+  <% end %>
+</form>
 
 <% @comments.each do |comment| %>
   <div class="show-topic">
     <p class="show-topic-data"><%= comment.content %></p>
     <ul>   
       <% if session[:user_id] == comment.user_id %>
-        <li><a class="option-hover" href="/topic/edit/<%=comment.id%>">Edit</a></li>  
+        <li><a class="option-hover" href="/comment/edit/<%=comment.id%>">Edit</a></li>  
       <% else %>
-        <li><a class="option-hover hidden" href="/topic/edit/<%=comment.id%>">Edit</a></li>    
-      <% end %>   -->      
+        <li><a class="option-hover hidden" href="/comment/edit/<%=comment.id%>">Edit</a></li>
+      <% end %>     
         <li><a class="option-hover" href="/profile/<%=User.find(comment.user_id).id%>"><%= User.find(comment.user_id).username %></a></li> 
       <li><%= comment.posted_at %></li>   
     </ul>

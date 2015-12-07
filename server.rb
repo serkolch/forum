@@ -6,7 +6,19 @@ module App
   
     get "/" do
       @session_user = User.find(session[:user_id]) if session[:user_id]
-      @topics = Topic.all
+      @topics = Topic.order(posted_at: :desc)
+      erb :index
+    end
+
+    get "/most_likes" do
+      @session_user = User.find(session[:user_id]) if session[:user_id]
+      @topics = Topic.order(likes: :desc)      
+      erb :index
+    end
+
+    get "/most_comments" do
+      @session_user = User.find(session[:user_id]) if session[:user_id]
+      @topics = Topic.order(comments: :desc)      
       erb :index
     end
 
@@ -76,7 +88,7 @@ module App
     end
 
     post "/topic/new" do
-      Topic.create(name: params["name"], content: params["content"], user_id: session[:user_id], posted_at: DateTime.now, likes: 0)
+      Topic.create(name: params["name"], content: params["content"], user_id: session[:user_id], posted_at: DateTime.now, likes: 0, comments: 0)
       redirect to "/topic/#{Topic.last.id}"
     end
 
@@ -107,12 +119,28 @@ module App
       redirect to "/"
     end
 
-    get "/topic/:id/comment/new" do
-      "Hello World"
+    post "/topic/:id/comment" do
+      Comment.create(content: params["content"], topic_id: params["id"], user_id: session[:user_id], posted_at: DateTime.now)
+      Topic.find(params["id"]).comments += 1
+      redirect to "/topic/#{Comment.last.topic_id}"
     end
 
-    post "/topic/:id/comment" do
-      "Hello World"
+    get "/comment/edit/:id" do
+      redirect to "/" if !session[:user_id]
+      @comment = Comment.find(params["id"])
+      erb :edit_comment
+    end
+
+    patch "/comment/:id" do
+      Comment.find(params["id"]).update(content: params["content"])
+      redirect to "/topic/#{Comment.find(params["id"]).topic_id}"
+    end
+
+    delete "/comment/:id" do
+      topic_id = Comment.find(params["id"]).topic_id
+      Comment.find(params["id"]).destroy
+      Topic.find(topic_id).comments -= 1
+      redirect to "/topic/#{topic_id}"
     end
 
     delete "/logout" do

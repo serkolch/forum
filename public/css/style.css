@@ -36,12 +36,12 @@ h1 {
   font-size: 16px;
 }
 
-.home, .signup, .login, .filter, .profile, .logout, .edit, .new-topic, .option-hover {
+.home, .signup, .login, .filter, .profile, .logout, .edit, .new-topic, .new-comment, .option-hover {
   color: #7D7D7D;
   text-decoration: none;
 }
 
-.home:hover, .signup:hover, .login:hover, .filter:hover, .profile:hover, .logout:hover, .edit:hover, .new-topic:hover, .option-hover:hover {
+.home:hover, .signup:hover, .login:hover, .filter:hover, .profile:hover, .logout:hover, .edit:hover, .new-topic:hover, .new-comment:hover, .option-hover:hover {
   font-weight: bolder;
   color: #525252;
 }
@@ -64,13 +64,17 @@ h1 {
 }
 
 .new-topic {
-  display:block;
   text-align: right;
-  margin: 5px;
+  margin: 5px 5px 5px 84%;
+}
+
+.loggedin {
+  margin-left: 91%
 }
 
 .layout {
   width:100%;
+  height: 125px;
   margin-bottom: -3px;
 }
 
@@ -84,7 +88,7 @@ h1 {
 .filters {
   text-align: center;
   padding: 5px;
-  margin: 0px;
+  margin: 0 0 8px 0;
 }
 
 .filter {
@@ -92,14 +96,14 @@ h1 {
 }
 
 .topics {
-  width: 600px;
+  width: 94%;
   margin: 5px auto;
 }
 
 .topics:hover {
   transition: all 0.4s;
   box-shadow: 0 -2px #787878, -2px 0px #787878, 0px 2px #787878, 2px 0 #787878;
-  width: 610px;
+  width: 95%;
 }
 
 .topic {
@@ -118,7 +122,7 @@ h1 {
 }
 
 .centering {
-  width: 600px;
+  width: 94%;
   margin: 10px auto;
   text-align: center;
 }
@@ -144,7 +148,7 @@ h2 {
 }
 
 .show-topic {
-  width: 600px;
+  width: 94%;
   height: 100%;
   margin: 10px auto;
   padding: 5px;
@@ -164,17 +168,24 @@ li {
 
 textarea {
   display: block;
-  width: 600px;
+  width: 94%;
   height: 50px;
   margin: 10px auto;
   resize: none;
 }
 
 .edit-text {
-  width: 570px;
+  width: 93%;
   height: 200px;
 }
 
 .edit-text:first-child {
   height: 40px;
+}
+
+.new-comment {
+  font-size: 16px;
+  border: none;
+  background: none;
+  margin-left: 88%;
 }

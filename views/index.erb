@@ -4,12 +4,13 @@
   <a class="filter">Most Commented</a>
 </div> <!-- filters -->
 
+<a class="new-topic" href="/topic/new">New Topic</a>
+
 <% @topics.each do |topic| %>
-
-  <div class="topics">
-    <p class="likes"><%= topic["likes"] %></p>
-    <p class="date"><%= topic["posted_at"] %></p>
-    <p class="topic"><%= topic["topic_name"] %></p>
-  </div> <!-- topic -->
-
+  <div class="topics"><a class="topic" href="/topic/<%=topic.id%>">
+    <p class="likes"><%= topic.likes %></p>
+    <p class="date"><%= topic.posted_at %></p>
+    <p class="topic"><%= topic.name %></p>
+    <p class="username"><%= topic.user.username%></p>
+  </a></div> <!-- topic -->
 <% end %>

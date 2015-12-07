@@ -1,0 +1,11 @@
+<div class="centering">
+  <h1><%= @user.username %></h1>
+  <img class="avatar" src="<%= @user.avatar %>">
+  <h2>Age: <%= @user.age %></h2>
+  <h2>Gender: <%= @user.gender %></h2>
+  <h2>Location: <%= @user.location %></h2>
+  <h2>Created: <%= @user.created_at %></h2>
+  <% if @user == @session_user %>
+    <a class="edit" href="/profile/<%=@user.id%>/edit">Edit</a>
+  <% end %>
+</div> <!-- centering -->

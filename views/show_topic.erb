@@ -1,0 +1,23 @@
+<div class="show-topic">
+  <h1 class="show-topic-data"><%= @topic.name %></h1>
+  <p class="show-topic-data"><%= @topic.content %></p>
+  <ul>
+    <li><a class="option-hover" href="/topic/<%=@topic.id%>/edit">Edit</a></li>  
+    <li><a class="option-hover" href="/profile/<%=User.find(@topic.user_id).id%>"><%= User.find(@topic.user_id).username %></a></li>
+    <li><%= @topic.posted_at %></li>
+    <li><%= @topic.likes %> likes</li>
+
+  </ul>
+</div>
+<textarea type="text" name="comment"></textarea>
+
+<% @comments.each do |comment| %>
+  <div class="show-topic">
+    <p class="show-topic-data"><%= comment.content %></p>
+    <ul>
+      <li><a class="option-hover" href="/topic/edit/<%=comment.id%>">Edit</a></li>       
+      <li><a class="option-hover" href="/profile/<%=User.find(comment.user_id).id%>"><%= User.find(comment.user_id).username %></a></li>
+      <li><%= comment.posted_at %></li>   
+    </ul>
+  </div>
+<% end %>

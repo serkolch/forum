@@ -1,0 +1,23 @@
+<div class="centering">
+
+  <h1>Editing <%= @user.username %>:</h1>
+
+  <form action="/profile/<%= @user.id %>" method="POST">
+    <input type="hidden" name="_method" value="patch" class="edit-input">
+    <label for="age">Age:</label>
+    <input type="integer" name="age" placeholder="Age" value="<%= @user.age %>" class="edit-input">
+    <label for="gender">Gender:</label>
+    <input type="text" name="gender" placeholder="Avatar URL" value="<%= @user.gender %>" class="edit-input">
+    <label for="location">Location:</label>    
+    <input type="integer" name="location" placeholder="Location" value="<%= @user.location %>" class="edit-input">
+    <label for="avatar">Avatar URL:</label>    
+    <input type="text" name="avatar" placeholder="Avatar URL" value="<%= @user.avatar %>" class="edit-input">
+    <input type="submit" value="Update User" class="edit-input"> 
+  </form>
+
+  <form method="POST" action="/profile/<%= @user.id %>">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete User" class="delete-input">
+  </form>
+
+</div> <!-- centering -->

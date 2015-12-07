@@ -2,9 +2,15 @@ html, body {
   background-color: #E8E8E8;
   margin: 0px;
   border: 0px;
+  font-family: helvetica;
 }
 
-.navigation-bar, .filters, .footer, .topics {
+h1 {
+  font-size: 30px;
+  margin: 10px;
+}
+
+.navigation-bar, .filters, .footer, .topics, .show-topic {
   background-color: #ADADAD;
 }
 
@@ -12,22 +18,31 @@ html, body {
   height: 32px;
 }
 
-.home, .login {
+.home, .register {
   position: absolute;
   top: 7px;
 }
 
-.home, .login, .filter {
+.logout {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 16px;
+}
+
+.home, .signup, .login, .filter, .profile, .logout, .edit, .new-topic, .option-hover {
   color: #7D7D7D;
   text-decoration: none;
 }
 
-.home:hover, .login:hover, .filter:hover {
+.home:hover, .signup:hover, .login:hover, .filter:hover, .profile:hover, .logout:hover, .edit:hover, .new-topic:hover, .option-hover:hover {
   font-weight: bolder;
   color: #525252;
 }
 
-.login {
+.register {
   right: 7px;
 }
 
@@ -35,13 +50,29 @@ html, body {
   left: 7px;
 }
 
-img {
+.profile {
+  text-align: right;
+  margin-right: 80px;
+}
+
+.login , .logout {
+  margin-left: 15px;
+}
+
+.new-topic {
+  display:block;
+  text-align: right;
+  margin: 5px;
+}
+
+.layout {
   width:100%;
+  margin-bottom: -3px;
 }
 
 .footer {
-/*  position:absolute;
-  bottom:0;*/
+  position:fixed;
+  bottom:0;
   width:100%;
   height:32px;
 }
@@ -49,6 +80,7 @@ img {
 .filters {
   text-align: center;
   padding: 5px;
+  margin: 0px;
 }
 
 .filter {
@@ -58,10 +90,19 @@ img {
 .topics {
   width: 600px;
   margin: 5px auto;
-
 }
 
-.likes, .date, .topic {
+.topics:hover {
+  transition: all 0.4s;
+  box-shadow: 0 -2px #787878, -2px 0px #787878, 0px 2px #787878, 2px 0 #787878;
+  width: 610px;
+}
+
+.topic {
+  color:black;
+}
+
+.likes, .date, .topic, .username {
   display: inline-block;
   margin: 5px 0 5px 5px;
 }
@@ -70,4 +111,65 @@ img {
   border-style: solid;
   border-color: white;
   border-width: 1px;
+}
+
+.centering {
+  width: 600px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.login-input, .signup-input, .edit-input, .delete-input {
+  margin: 5px;
+  width: 200px;
+  height: 30px;
+  font-size: 18px;
+}
+
+.signup-input, .edit-input {
+  display: block;
+  margin: 5px 0 20px 200px;
+}
+
+.avatar {
+  width: 300px;
+}
+
+h2 {
+  margin: 6px;
+}
+
+.show-topic {
+  width: 600px;
+  height: 100%;
+  margin: 10px auto;
+  padding: 5px;
+}
+
+.show-topic-data {
+  margin: 0;
+  padding: 5px;
+  display: block;
+}
+
+li {
+  display: inline-block;
+  padding: 0 0 5px 5px;
+  color: #7D7D7D;
+}
+
+textarea {
+  display: block;
+  width: 600px;
+  height: 50px;
+  margin: 10px auto;
+}
+
+.edit-text {
+  width: 570px;
+  height: 200px;
+}
+
+.edit-text:first-child {
+  height: 40px;
 }

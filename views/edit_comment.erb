@@ -1,10 +1,10 @@
 <h1>Editing Comment:</h1>
 
 <form method="POST" action="/comment/<%= @comment.id %>">
-  <input type="hidden" name="_method" value="patch" class="edit-input">
+  <input type="hidden" name="_method" value="patch">
   <div class="show-topic">
     <textarea class="edit-text" type="text" name="content"><%= @comment.content %></textarea>
-  </div> <!-- centering -->  
+  </div> <!-- show-topic -->  
   <input type="submit" value="Update Comment" class="edit-input"> 
 </form>
 

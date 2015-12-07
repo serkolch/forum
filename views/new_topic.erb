@@ -5,5 +5,10 @@
     <textarea class="edit-text" type="text" name="name" placeholder="Topic Name"></textarea>  
     <textarea class="edit-text" type="text" name="content" placeholder="Content"></textarea>
   </div> <!-- centering -->  
+  <select class="filter-tag" name="tag">
+    <% Tag.all.each do |tag|%>
+      <option value="<%=tag.sport%>"><%=tag.sport%></option>
+    <% end %>
+  </select>
   <input type="submit" value="New Topic" class="edit-input"> 
 </form>

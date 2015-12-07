@@ -13,7 +13,7 @@ module App
         @topics = Topic.order(posted_at: :desc)
       elsif tag=="General"
         @topics = Topic.where(user_id: User.where(location: location)).order(posted_at: :desc)
-      elsif tag=="All"
+      elsif location=="All"
         @topics = Topic.where(tag: tag).order(posted_at: :desc)
       else
         @topics = Topic.where(user_id: User.where(location: location), tag: tag)
@@ -33,7 +33,7 @@ module App
         @topics = Topic.order(likes: :desc)
       elsif tag=="General"
         @topics = Topic.where(user_id: User.where(location: location)).order(likes: :desc)
-      elsif tag=="All"
+      elsif location=="All"
         @topics = Topic.where(tag: tag).order(likes: :desc)
       else
         @topics = Topic.where(user_id: User.where(location: location), tag: tag).order(likes: :desc)
@@ -47,7 +47,7 @@ module App
         @topics = Topic.order(comment_count: :desc)
       elsif tag=="General"
         @topics = Topic.where(user_id: User.where(location: location)).order(comment_count: :desc)
-      elsif tag=="All"
+      elsif location=="All"
         @topics = Topic.where(tag: tag).order(comment_count: :desc)
       else
         @topics = Topic.where(user_id: User.where(location: location), tag: tag).order(comment_count: :desc)
@@ -122,7 +122,7 @@ module App
     end
 
     post "/topic/new" do
-      Topic.create(name: params["name"], content: params["content"], user_id: session[:user_id], posted_at: DateTime.now, likes: 0, comments: 0)
+      Topic.create(name: params["name"], content: params["content"], tag: params["tag"], user_id: session[:user_id], posted_at: DateTime.now, likes: 0, comment_count: 0)
       redirect to "/topic/#{Topic.last.id}"
     end
 

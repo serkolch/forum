@@ -1,11 +1,11 @@
 <h1>Editing Topic:</h1>
 
 <form action="/topic/<%= @topic.id %>" method="POST">
-  <input type="hidden" name="_method" value="patch" class="edit-input">
+  <input type="hidden" name="_method" value="patch">
   <div class="show-topic">
     <textarea class="edit-text" type="text" name="name"><%= @topic.name %></textarea>  
     <textarea class="edit-text" type="text" name="content"><%= @topic.content %></textarea>
-  </div> <!-- centering -->  
+  </div> <!-- show-topic -->  
   <input type="submit" value="Update Topic" class="edit-input"> 
 </form>
 

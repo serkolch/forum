@@ -2,6 +2,7 @@ html, body {
   background-image: url("../img/basketball.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
+  background-attachment: fixed;
   margin: 0px;
   border: 0px;
   font-family: helvetica;
@@ -51,12 +52,12 @@ h1 {
   right: 180px;
 }
 
-.home, .signup, .login, .filter, .profile, .logout, .edit, .new-topic, .new-comment-loggedin, .new-comment-loggedout, .option-hover, .filter-tag-loc {
+.home, .signup, .login, .filter, .profile, .logout, .edit, .new-topic, .new-comment-loggedin, .new-comment-loggedout, .option-hover, .filter-tag, .filter-tag-loc, .edit-input, .delete-input {
   color: #7D7D7D;
   text-decoration: none;
 }
 
-.home:hover, .signup:hover, .login:hover, .filter:hover, .profile:hover, .logout:hover, .edit:hover, .new-topic:hover, .new-comment-loggedin:hover, .new-comment-loggedout:hover, .option-hover:hover, .filter-tag-loc:hover {
+.home:hover, .signup:hover, .login:hover, .filter:hover, .profile:hover, .logout:hover, .edit:hover, .new-topic:hover, .new-comment-loggedin:hover, .new-comment-loggedout:hover, .option-hover:hover, .filter-tag:hover, .filter-tag-loc:hover, .edit-input:hover, .delete-input:hover {
   font-weight: bolder;
   color: #525252;
 }
@@ -220,8 +221,10 @@ textarea {
   margin-left: 82%;
 }
 
-.filter-tag-loc {
+.filter-tag, .edit-input, .delete-input {
   font-size: 16px;
   border:none;
   background:none;
+  display: block;
+  margin: 0 auto;
 }

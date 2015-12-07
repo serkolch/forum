@@ -2,11 +2,11 @@
   <h1 class="show-topic-data"><%= @topic.name %></h1>
   <p class="show-topic-data"><%= @topic.content %></p>
   <ul>
-    <% if @session_user.id == @topic.user_id %>
+<!--     <% if @session_user.id == @topic.user_id %>
       <li><a class="option-hover" href="/topic/<%=@topic.id%>/edit">Edit</a></li> 
     <% else %>
       <li><a class="option-hover hidden" href="/topic/<%=@topic.id%>/edit">Edit</a></li>     
-    <% end %>
+    <% end %> -->
     <li><a class="option-hover" href="/profile/<%=User.find(@topic.user_id).id%>"><%= User.find(@topic.user_id).username %></a></li>
     <li><%= @topic.posted_at %></li>
     <li><%= @topic.likes %> likes</li>
@@ -19,11 +19,11 @@
   <div class="show-topic">
     <p class="show-topic-data"><%= comment.content %></p>
     <ul>   
-      <% if @session_user.id == comment.user_id %>
+<!--       <% if @session_user.id == comment.user_id %>
         <li><a class="option-hover" href="/topic/edit/<%=comment.id%>">Edit</a></li>  
       <% else %>
         <li><a class="option-hover hidden" href="/topic/edit/<%=comment.id%>">Edit</a></li>    
-      <% end %>        
+      <% end %>   -->      
       <li><a class="option-hover" href="/profile/<%=User.find(comment.user_id).id%>"><%= User.find(comment.user_id).username %></a></li>
       <li><%= comment.posted_at %></li>   
     </ul>

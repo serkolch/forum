@@ -11,3 +11,5 @@ class CreateTags < ActiveRecord::Migration
     drop_table :tags
   end
 end
+
+CreateTags.migrate(:down)

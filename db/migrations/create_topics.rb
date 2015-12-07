@@ -15,3 +15,5 @@ class CreateTopics < ActiveRecord::Migration
     drop_table :topics
   end
 end
+
+CreateTopics.migrate(:down)

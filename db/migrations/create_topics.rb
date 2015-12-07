@@ -9,6 +9,7 @@ class CreateTopics < ActiveRecord::Migration
       t.string(:content)
       t.integer(:likes)
       t.integer(:comment_count)
+      t.string(:tag)
     end
   end
 

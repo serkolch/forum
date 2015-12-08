@@ -4,11 +4,15 @@ module App
     set :method_override, true
     enable :sessions
 
+    # When using the drop-down filters, those inputs are pushed to these values
     tag = "General"
     location = "All"
   
+    # Filter all the topics based on tag and location - by default they are printed in reverse chronological order
     get "/" do
+      # Is there an authenticated user? (This changes two links in the layout.erb)
       @session_user = User.find(session[:user_id]) if session[:user_id]
+      # General and All are not values seeded in the DB - they refer to topics in all locations and for all sports - and can't be queried by activerecord
       if tag=="General"&&location=="All"
         @topics = Topic.order(posted_at: :desc)
       elsif tag=="General"
@@ -21,12 +25,14 @@ module App
       erb :index
     end
 
+    # Push new tag and location values
     post "/filter" do
       tag = params["tag"]
       location = params["location"]
       redirect to "/"
     end
 
+    # Filter by most likes using tag and location
     get "/most_likes" do
       @session_user = User.find(session[:user_id]) if session[:user_id]
       if tag=="General"&&location=="All"
@@ -41,6 +47,7 @@ module App
       erb :index
     end
 
+    # Filter by most comments using tag and location
     get "/most_comments" do
       @session_user = User.find(session[:user_id]) if session[:user_id]
       if tag=="General"&&location=="All"
@@ -64,7 +71,6 @@ module App
       if user
         session[:user_id] = user.id
         redirect to "/"
-        binding.pry
       else
         redirect to "/login"
       end
@@ -76,11 +82,11 @@ module App
 
     post "/users" do
       user = User.new(username: params["username"], password: params["password"], age: params["age"], gender: params["gender"], location: params["location"], avatar: params["avatar"], created_at: DateTime.now)
-      if user.save
+      if user.save || user.password || user.location
         session[:user_id] = user.id
         redirect to "/"
       else 
-        "Wrong information"
+        "Wrong information - try another username or password - and include all information!"
       end
     end
 
@@ -96,8 +102,7 @@ module App
         @user = User.find(params[:id])
         erb :edit_user
       else
-        "#{params[:id].class} ... #{session[:user_id].class}"
-        # redirect to "/profile/#{params[:id]}"
+        redirect to "/profile/#{params["id"]}"
       end
     end
 

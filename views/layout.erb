@@ -4,14 +4,14 @@
   <title>NYC Pick-Up Sports</title>
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css">
-  <link href="../css/animate.css" media="screen" rel="stylesheet" type="text/css"/>  
   <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
   <script src="/js/main.js"></script>
 </head>
 <body>
   <div class="navigation-bar">
-    <a class="home"href="/">Home</a>
+    <a class="home" href="/">Home</a>
     <div class="register">
+      <!-- Filters for Sport, Location -->
       <form class="overall-filters" method="POST" action="/filter">
         <select class="filter-tag-loc" name="tag">
           <% Tag.all.each do |tag|%>
@@ -26,6 +26,7 @@
         </select>
         <input class="filter-tag-loc" type="submit" value="Filter">
       </form>
+      <!-- These links will be User's Name & Log Out if logged in, and Sign Up & Log In if not -->
       <% if @session_user %>
         <a href="/profile/<%= @session_user.id%>" class="profile"><%= @session_user.username%></a>
         <form method="POST" action="/logout">

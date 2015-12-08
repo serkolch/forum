@@ -4,12 +4,14 @@
   <a href="/most_comments" class="filter">Most Commented</a>
 </div> <!-- filters -->
 
+<!-- This link will be "New Topic" if logged in and "Sign in to create topics" if not -->
 <% if @session_user %>
   <a class="new-topic loggedin" href="/topic/new">New Topic</a>
 <% else %>
   <a class="new-topic" href="/login">Sign in to create topics</a>
 <% end %>
 
+<!-- Iterate through @topics and create a div with all relevant information -->
 <% @topics.each do |topic| %>
   <div class="topics"><a class="topic" href="/topic/<%=topic.id%>">
     <p class="likes"><%= topic.likes %></p>

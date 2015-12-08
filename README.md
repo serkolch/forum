@@ -28,11 +28,11 @@ A signed-in user can sign out
 <img src="public/img/erd.png" alt="This is where an ERD should be!" width="500px"/>
 
 ## Wireframes
-<img src="public/img/landing.png" alt="This is where a wireframe should be!" width="500px"/>
+<img src="public/img/landing.png" alt="This is where a wireframe should be!" width="500px"/>  
 The landing page has all the topics available without having to log-in
-<img src="public/img/topic.png" alt="This is where a wireframe should be!" width="500px"/>
+<img src="public/img/topic.png" alt="This is where a wireframe should be!" width="500px"/>  
 A page for an individual topic displays the topic's pertinent information at the top with comments thereafter
-<img src="public/img/login.png" alt="This is where a wireframe should be!" width="500px"/>
+<img src="public/img/login.png" alt="This is where a wireframe should be!" width="500px"/>  
 Login only requires username and password
-<img src="public/img/signup.png" alt="This is where a wireframe should be!" width="500px"/>
+<img src="public/img/signup.png" alt="This is where a wireframe should be!" width="500px"/>  
 Creating a new user requires more information about the user - location, age, gender, avatar

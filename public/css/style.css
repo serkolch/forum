@@ -1,7 +1,7 @@
 html, body {
   background-image: url("../img/basketball.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
   background-attachment: fixed;
   margin: 0px;
   border: 0px;
@@ -13,86 +13,60 @@ h1 {
   margin: 10px;
 }
 
-.navigation-bar, .filters, .footer, .topics, .show-topic, .new-topic, .new-comment-loggedin, .new-comment-loggedout {
+.navigation-bar, .filters, .footer, .topics, .show-topic, .new-topic, .new-comment {
   background-color: rgba(173,173,173,0.7);
 }
 
 .navigation-bar {
-  height: 32px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
 }
 
 .hidden {
   visibility: hidden;
 }
 
-.home, .register {
-  position: absolute;
-  top: 7px;
-}
-
-.logout, .filter-tag-loc {
-  position: absolute;
-  top: -4px;
+.logout, .filter-tag-loc, .filter-tag, .edit-input, .delete-input {
   background: none;
   border: none;
   font-size: 16px;
 }
 
-.filter-tag-loc:nth-child(1) {
-  right: 290px;
-  top: -3px;
-}
-
-.filter-tag-loc:nth-child(2) {
-  right: 230px;
-  top: -3px;
-}
-
-.filter-tag-loc:nth-child(3) {
-  right: 180px;
-}
-
-.home, .signup, .login, .filter, .profile, .logout, .edit, .new-topic, .new-comment-loggedin, .new-comment-loggedout, .option-hover, .filter-tag, .filter-tag-loc, .edit-input, .delete-input {
+.home, .signup, .login, .filter, .profile, .logout, .edit, .new-topic, .new-comment, .option-hover, .filter-tag, .filter-tag-loc, .edit-input, .delete-input {
   color: #7D7D7D;
   text-decoration: none;
 }
 
-.home:hover, .signup:hover, .login:hover, .filter:hover, .profile:hover, .logout:hover, .edit:hover, .new-topic:hover, .new-comment-loggedin:hover, .new-comment-loggedout:hover, .option-hover:hover, .filter-tag:hover, .filter-tag-loc:hover, .edit-input:hover, .delete-input:hover {
+.home:hover, .signup:hover, .login:hover, .filter:hover, .profile:hover, .logout:hover, .edit:hover, .new-topic:hover, .new-comment:hover, .option-hover:hover, .filter-tag:hover, .filter-tag-loc:hover, .edit-input:hover, .delete-input:hover {
   font-weight: bolder;
   color: #525252;
 }
 
-.register {
-  right: 7px;
-}
-
 .home {
-  left: 7px;
-}
-
-.profile {
-  text-align: right;
-  margin-right: 80px;
+  align-self: center;
 }
 
 .login , .logout {
-  margin-left: 15px;
-  right: 0;
+  margin-left: 10px;
 }
 
-.overall-filters {
-  right: 200px;
+.overall-filters, .logout, .inline-block {
   display: inline-block;
 }
 
-.new-topic {
-  text-align: right;
-  margin: 5px 5px 5px 84%;
-  padding: 1px 3px 1px 3px;
+.centering, .centering-right {
+  width: 94%;
+  margin: 10px auto;
 }
 
-.loggedin {
-  margin-left: 91%
+.centering {
+  text-align: center;
+}
+
+.centering-right {
+  text-align: right;
 }
 
 .layout {
@@ -143,12 +117,6 @@ h1 {
   border-style: solid;
   border-color: white;
   border-width: 1px;
-}
-
-.centering {
-  width: 94%;
-  margin: 10px auto;
-  text-align: center;
 }
 
 .login-input, .signup-input, .edit-input, .delete-input {
@@ -207,24 +175,14 @@ textarea {
   height: 40px;
 }
 
-.new-comment-loggedin, .new-comment-loggedout {
+.new-comment {
   font-size: 16px;
   border: none;
-  padding: 1px 4px;
+  padding: 2px;
 }
 
-.new-comment-loggedin {
-  margin-left: 88%;
-}
-
-.new-comment-loggedout {
-  margin-left: 82%;
-}
 
 .filter-tag, .edit-input, .delete-input {
-  font-size: 16px;
-  border:none;
-  background:none;
   display: block;
   margin: 0 auto;
 }

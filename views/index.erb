@@ -1,15 +1,11 @@
-<div class="filters">
-  <a href="/" class="filter">New</a>
-  <a href="/most_likes" class="filter">Liked</a>
-  <a href="/most_comments" class="filter">Most Commented</a>
-</div> <!-- filters -->
-
 <!-- This link will be "New Topic" if logged in and "Sign in to create topics" if not -->
-<% if @session_user %>
-  <a class="new-topic loggedin" href="/topic/new">New Topic</a>
-<% else %>
-  <a class="new-topic" href="/login">Sign in to create topics</a>
-<% end %>
+<div class="centering-right">
+  <% if @session_user %>
+    <a class="new-topic" href="/topic/new">New Topic</a>
+  <% else %>
+    <a class="new-topic" href="/login">Sign in to create topics</a>
+  <% end %>
+</div> <!-- centering -->
 
 <!-- Iterate through @topics and create a div with all relevant information -->
 <% @topics.each do |topic| %>

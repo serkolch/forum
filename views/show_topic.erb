@@ -16,11 +16,13 @@
 
 <form method="POST" action="/topic/<%=@topic.id%>/comment">
   <textarea type="text" name="content" placeholder="Type comments here!"></textarea>
-  <% if session[:user_id] %>
-    <input class="new-comment-loggedin" type="submit" value="New Comment">
-  <% else %>
-    <a class="new-comment-loggedout" href="/login">Sign in to leave comments</a>
-  <% end %>
+  <div class="centering-right">
+    <% if session[:user_id] %>
+      <input class="new-comment" type="submit" value="New Comment">
+    <% else %>
+      <a class="new-comment" href="/login">Sign in to leave comments</a>
+    <% end %>
+  </div> <!-- centering-right -->
 </form>
 
 <% @comments.each do |comment| %>

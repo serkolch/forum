@@ -29,7 +29,7 @@
       <!-- These links will be User's Name & Log Out if logged in, and Sign Up & Log In if not -->
       <% if @session_user %>
         <a href="/profile/<%= @session_user.id%>" class="profile"><%= @session_user.username%></a>
-        <form method="POST" action="/logout">
+        <form method="POST" action="/logout" class="inline-block">
           <input type="hidden" name="_method" value="delete">
           <input type="submit" class="logout" value="Log Out">
         </form>
@@ -40,6 +40,11 @@
     </div> <!-- register -->
   </div> <!-- navigation-bar -->
   <div class="layout"></div> <!-- image -->
+  <div class="filters">
+    <a href="/" class="filter">New</a>
+    <a href="/most_likes" class="filter">Liked</a>
+    <a href="/most_comments" class="filter">Most Commented</a>
+  </div> <!-- filters -->
   <%= yield %>
 </body>
 </html>
